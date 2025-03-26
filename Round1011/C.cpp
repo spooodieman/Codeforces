@@ -6,7 +6,9 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-
+    ll x, y; cin >> x >> y;
+    if(x & y)cout << 0 << '\n';
+    else cout << -1 << '\n';
 }
 
 int main(){

@@ -6,7 +6,11 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-
+    ll m,n,k; cin >> m >> n >> k;
+    ll size; cin >> size;
+    vector<ll> vals(size);
+    for(auto &x: vals) cin >> x;
+    
 }
 
 int main(){

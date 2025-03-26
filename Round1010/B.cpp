@@ -6,6 +6,15 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
+    ll x,n,m; cin >> x >> n >> m;
+    if(x <= (2 * n)){
+        cout << 0 << " " << 0 << '\n';
+        return;
+    }
+    x >>= n;
+    x >>=m;
+    x++;
+    cout << x << '\n';
 
 }
 
