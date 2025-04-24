@@ -8,11 +8,18 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    string s; cin >> s;
-    ll n; cin >> n;
-    
-
-}
+    ll n,k; cin >> n >> k;
+    vector<ll> ans(n);
+    k = min(k,n-1);
+    ans[n-1] = k;
+    ll index = 0;
+    for(ll i = 0; i < n-1; i++){
+        if(index == k)index++;
+        ans[i] = index++;
+    }
+    for(ll x : ans) cout << x << " ";
+    cout << '\n';
+}   
 
 int main(){
     ios::sync_with_stdio(false); cin.tie(nullptr);

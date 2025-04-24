@@ -8,10 +8,12 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    string s; cin >> s;
-    ll n; cin >> n;
-    
-
+    ll x,y,n; cin >> x >> y >> n;
+    n %= (x+y);
+    if(x <= n){
+        cout << "YES" << '\n';
+    }
+    else cout << "NO" << '\n';
 }
 
 int main(){

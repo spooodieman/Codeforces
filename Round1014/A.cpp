@@ -8,10 +8,11 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    string s; cin >> s;
     ll n; cin >> n;
-    
-
+    vector<ll> vals(n);
+    invl(vals);
+    sort(all(vals));
+    cout << vals[n-1] - vals[0] << '\n';
 }
 
 int main(){

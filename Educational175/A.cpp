@@ -8,10 +8,18 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    string s; cin >> s;
     ll n; cin >> n;
-    
-
+    ll answer;
+    if(n < 3){
+        answer = n + 1;
+    }
+    else answer = 3;
+    if(n < 15){
+        cout << answer << '\n';
+        return;
+    }
+    answer += ((max(n/15 - 1,0LL) * 3) + min(3LL,n%15 + 1));
+    cout << answer << '\n';
 }
 
 int main(){

@@ -8,10 +8,12 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    string s; cin >> s;
     ll n; cin >> n;
-    
-
+    vector<ll> arr(n);
+    invl(arr);
+    for(ll i = 0; i < n; i++){
+        for(ll j = 1;  )
+    }
 }
 
 int main(){
@@ -19,4 +21,4 @@ int main(){
     ll limit;
     cin >> limit;
     for(ll i = 0; i < limit; i++) solve();
-}
+}   

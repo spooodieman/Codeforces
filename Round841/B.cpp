@@ -8,9 +8,9 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    string s; cin >> s;
     ll n; cin >> n;
-    
+    ll answer =  (((n * (n+1))%mod * (4 * n - 1))%mod * 337)%mod;
+    cout << answer << '\n';
 
 }
 
