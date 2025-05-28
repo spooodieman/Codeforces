@@ -8,10 +8,16 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    ll n,m; cin >> n >> m;
-    vector<vector<ll>> arr(n,vector<ll>(m));
-    for(ll i = 0; i < n; i++) invl(arr[i]);
-    
+    ll n; cin >> n;
+    vector<ll> arr(n);
+    invl(arr);
+    ll count = 0;
+    for(ll i = 1; i < n; i++){
+        if(abs(arr[i]) > abs(arr[0])) count++;
+    }
+    if(count%2==1) cout << "YES" << '\n';
+    else cout << "NO" << '\n';
+  
 }
 
 int main(){

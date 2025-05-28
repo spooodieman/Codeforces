@@ -7,11 +7,11 @@ using namespace std;
 const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
+
 void solve(){
-    ll n,m; cin >> n >> m;
-    vector<vector<ll>> arr(n,vector<ll>(m));
-    for(ll i = 0; i < n; i++) invl(arr[i]);
-    
+    ll n; cin >> n;
+    vector<ll> arr(n);
+    invl(arr);
 }
 
 int main(){

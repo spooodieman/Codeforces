@@ -8,10 +8,15 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(){
-    ll n,m; cin >> n >> m;
-    vector<vector<ll>> arr(n,vector<ll>(m));
-    for(ll i = 0; i < n; i++) invl(arr[i]);
-    
+    ll a,b,c; cin >> a >> b >> c;
+    ll sum = a + b + c;
+    if(sum%3) {
+        cout << "NO" << '\n';
+        return;
+    }
+    ll average = sum/3;
+    if(a <= average && b <= average) cout << ((a <= c && b <= c)?("YES"):("NO")) << '\n'; 
+    else cout << "NO" << '\n';
 }
 
 int main(){

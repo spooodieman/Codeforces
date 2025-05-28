@@ -3,20 +3,21 @@ using namespace std;
 #define ll long long
 #define invl(v) for(auto &x: v) cin >> x;
 #define all(v) (v).begin(), (v).end()
+#define fl(p,n) for(ll p = 0; p < n; p++)
+#define YES cout << "YES\n"
+#define NO cout << "NO\n"
+#define vi vector<ll>
 
 const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
-void solve(){
-    ll n,m; cin >> n >> m;
-    vector<vector<ll>> arr(n,vector<ll>(m));
-    for(ll i = 0; i < n; i++) invl(arr[i]);
+void solve(ll tt = 0){
     
 }
 
 int main(){
     ios::sync_with_stdio(false); cin.tie(nullptr);
-    ll limit;
-    cin >> limit;
-    for(ll i = 0; i < limit; i++) solve();
+    ll t; cin >> t;
+    for(ll i = 1; i <= t; i++)
+        solve();
 }
