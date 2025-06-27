@@ -11,12 +11,17 @@ void solve(){
     ll n; cin >> n;
     vector<ll> arr(n);
     invl(arr);
-    ll count = 0;
-    for(ll i = 1; i < n; i++){
-        if(abs(arr[i]) > abs(arr[0])) count++;
+    for(ll i = 0; i < n; i++){
+        arr[i] = abs(arr[i]);
     }
-    if(count%2==1) cout << "YES" << '\n';
-    else cout << "NO" << '\n';
+    ll goal = arr[0];
+    sort(all(arr));
+    for(ll i = 0; i < n/2+1; i++) 
+        if(arr[i] == goal) {
+            cout << "YES" << '\n';
+            return;
+        }
+    cout << "NO" << '\n';
   
 }
 

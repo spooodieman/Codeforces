@@ -3,7 +3,7 @@ using namespace std;
 #define ll long long
 #define invl(v) for(auto &x: v) cin >> x;
 #define all(v) (v).begin(), (v).end()
-#define f(p,n) for(ll p = 0; p < n; p++)
+#define fl(p,n) for(ll p = 0; p < n; p++)
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 #define vi vector<ll>
@@ -12,7 +12,21 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    int n, ans = 0;
+    cin >> n;
+    vector<int> a(n);
+    for(int i=0; i<n; i++) cin >> a[i];
+    set<int> cur, seen;
+    for(int i=0; i<n; i++){
+        cur.insert(a[i]);
+        seen.insert(a[i]);
+        if(cur.size() == seen.size()){
+            ans++;
+            seen.clear();
+        }
+    }
+    cout << ans << '\n';
+    
 }
 
 int main(){

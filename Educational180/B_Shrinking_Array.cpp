@@ -12,7 +12,25 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    ll n; cin >> n;
+    vi arr(n); invl(arr);
+    f(i,n-1){
+        if(abs(arr[i] - arr[i+1]) <= 1){
+            cout << 0 << '\n';
+            return;
+        }
+    }
+    if(n == 2){
+        cout << "-1" << '\n';
+        return;
+    } 
+    for(int i = 1; i < n-1; i++){
+        if((arr[i] > arr[i-1] && arr[i] > arr[i+1]) || (arr[i] < arr[i-1] && arr[i] < arr[i+1])){
+            cout << 1 << '\n';
+            return;
+        }
+    }
+    cout << -1 << '\n';
 }
 
 int main(){
