@@ -12,7 +12,25 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    ll n; cin >> n;
+    vi arr(n); invl(arr);
+    vi freq(n+1,0);
+    for(ll x : arr) freq[x]++;
+    vi pref(n+2,0);
+    f(i,0,n+1){
+        ll mn = freq[i];
+        if(mn <= n-i){
+            pref[mn]++;
+            pref[n-i+1]--;
+        }
+        if(freq[i] == 0) break;
+    }
+    ll ans = 0;
+    f(i,0,n+1){
+        ans += pref[i];
+        cout << ans << " ";
+    }
+    cout << '\n';
 }
 
 int main(){

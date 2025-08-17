@@ -12,7 +12,7 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    
 }
 
 int main(){

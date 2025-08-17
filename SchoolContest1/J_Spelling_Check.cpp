@@ -12,7 +12,12 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    string s,t; cin >> s >> t;
+    if(s.size() != t.size()-1){
+        cout << "0\n";
+        return;
+    }
+    
 }
 
 int main(){

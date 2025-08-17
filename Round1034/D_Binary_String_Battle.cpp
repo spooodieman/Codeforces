@@ -12,9 +12,15 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    ll n,k; cin >> n >> k;
+    string s; cin >> s;
+    ll count = 0;
+    for(char c : s) count += (c - '0');
+    if(n/2 + 1 <= k || count <= k){
+        cout << "Alice" << '\n';
+    }
+    else cout << "Bob" << '\n';
 }
-
 int main(){
     ios::sync_with_stdio(false); cin.tie(nullptr);
     ll t; cin >> t;

@@ -12,6 +12,17 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
+    ll n,j,k; cin >> n >> j >> k;
+    vi arr(n); invl(arr);
+    ll val = arr[j-1];
+    if(k != 1){
+        YES;
+        return;
+    }
+    ll mx = -1;
+    for(ll x: arr) mx = max(mx,x);
+    if(mx == val)YES;
+    else NO;
 
 }
 

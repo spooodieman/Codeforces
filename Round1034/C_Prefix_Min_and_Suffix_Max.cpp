@@ -12,7 +12,26 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    ll n; cin >> n;
+    vi arr(n); invl(arr);
+    vi mn(n+1,1e9), mx(n+1,0);
+    vi ans(n,0);
+    ans[0] = 1;
+    ans[n-1] = 1;
+    f(i,1,n+1){
+        mn[i] = min(arr[i-1],mn[i-1]);
+    } 
+    for(ll i = n-1; i >= 0; i--){
+        mx[i] = max(mx[i+1],arr[i]);
+    }
+   
+    f(i,1,n-1){
+        if(arr[i] < mn[i] || arr[i] > mx[i+1]){
+            ans[i] = 1;
+        }
+    }
+    for(ll x : ans) cout << x;
+    cout << '\n';
 }
 
 int main(){

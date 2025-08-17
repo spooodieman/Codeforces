@@ -12,7 +12,9 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    ll n; cin >> n;
+    if(n%4 == 0) cout << "Bob\n";
+    else cout << "Alice\n";
 }
 
 int main(){

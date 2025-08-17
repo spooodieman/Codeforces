@@ -12,7 +12,17 @@ const ll mod = 1e9 + 7;
 const ll INF = LLONG_MAX >> 1;
 
 void solve(ll tt = 0){
-
+    ll n; cin >> n;
+    string curr = "";
+    while(n){
+        curr.push_back('0' + (n%9));
+        n/= 9;
+    }
+    reverse(curr.begin(),curr.end());
+    for(char &c : curr){
+        if(c >= '4')c++;
+    }
+    cout << curr << '\n';
 }
 
 int main(){
