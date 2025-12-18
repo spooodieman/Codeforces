@@ -17,24 +17,27 @@ void solve(ll tt = 0){
         NO;
         return;
     }
-    ll mx; 
+    
+    ll mx = 0; 
+    for (int i = 1; i <= n; i++) mx += abs(n - 2 * i + 1); 
+    
+    if(x > mx){
+        NO;
+        return;
+    }
+
     vi ans(n);
     f(i,0,n) ans[i] = i+1;
-    x/=2;
-    for (int i = 0; i < n; i++)mx  += abs(n - 1 - i - i); 
-        if(x > mx){
-            NO;
-            return;
-        }
-        f(i,0,n){
-            if (x >= n - 1 - 2 * i) {
-                    swap(ans[i], ans[n - 1 - i]);
-                    x -= n - 1 - 2 * i;
-                } else {
-                    swap(ans[i], ans[i + x]);
-                    x = 0;
-            }  
-        }
+
+    f(i,0,n/2){
+        if(x == 0) break;
+
+        if (x >= abs(n-(2*(i+1))+1)) {
+            swap(ans[i], ans[n - 1 - i]);
+            x -= abs(n-(2*(i+1))+1);
+        } 
+    }
+    
     cout << "YES" << '\n';
     f(i,0,n) cout << ans[i] << " ";
     cout << '\n';

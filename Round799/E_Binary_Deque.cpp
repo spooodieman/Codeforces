@@ -15,20 +15,46 @@ void solve(ll tt = 0){
     ll n,k; cin >> n >> k;
     vi arr(n); invl(arr);
     ll sum = 0;
-    if(accumulate(all(arr),sum));
+    f(i,0,n) sum += arr[i];
     if(sum < k){
         cout << "-1\n";
         return;
     }
-    vi pref(n+1,0);
-    vi suf(n+1,0);
-    f(i,1,n+1){
-        pref[i] = pref[i-1] + arr[i-1];
+    else if(sum == k){
+        cout << "0\n";
+        return;
     }
+    vi pref,suf;
+    ll curr = 1;
+    f(i,0,n){
+        if(arr[i] == 1) {
+            pref.push_back(curr);
+            curr = 1;
+        }
+        else curr++;
+    }
+    curr = 1;
     for(ll i = n-1; i >= 0; i--){
-        suf[i] = arr[i] + suf[i+1];
+        if(arr[i] == 1) {
+            suf.push_back(curr);
+            curr = 1;
+        }
+        else curr++;
     }
-    
+    f(i,0,pref.size()) cout << pref[i] << " ";
+    cout << '\n';
+    f(i,0,pref.size()) cout << suf[i] << " ";
+    cout << '\n';
+    ll ans = 0;
+    ll ind1 = 0, ind2 = 0;
+    while(sum != k){
+        if(pref[ind1] < suf[ind2]){
+            ans += pref[ind1++];
+        }
+        else ans += suf[ind2++];
+        sum--;
+    }
+    cout << ans << '\n';
 }
 
 int main(){

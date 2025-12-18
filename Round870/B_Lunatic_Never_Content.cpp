@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define invl(v) for(auto &x: v) cin >> x;
+#define all(v) (v).begin(), (v).end()
+#define f(p,q,n) for(ll p = q; p < n; p++)
+#define YES cout << "YES\n"
+#define NO cout << "NO\n"
+#define vi vector<ll>
+
+const ll mod = 1e9 + 7;
+const ll INF = LLONG_MAX >> 1;
+
+void solve(ll tt = 0){
+    ll n; cin >> n;
+    vi arr(n); invl(arr);
+    ll curr = INF;
+    f(i,0,n/2){
+        if(arr[i] == arr[n-i-1]) continue;
+        else{
+            if(curr == INF){
+                curr = abs(arr[i] - arr[n-i-1]);
+            }
+            else{
+                curr = __gcd(curr,abs(arr[i] - arr[n-i-1]));
+            }
+        }
+    }
+    if(curr == INF) cout << 0 << '\n';
+    else cout << curr << '\n';
+}
+
+int main(){
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    ll t; cin >> t;
+    for(ll i = 1; i <= t; i++)
+        solve();
+}
